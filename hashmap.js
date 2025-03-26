@@ -1,27 +1,32 @@
+// Hashmap
+// key-value pair
+// key is a number
+// value is an array
 class Hashmap {
     constructor() {
         this.map = {}; 
     }
 
     hash(k){ 
-        // 
+        // this will serve as our segments/groupings
+        // how many are the allowed keys
         return k % 10;
     }
 
     add(key, value){
-        // 
+        // getting the segment
         let hashKey = this.hash(key);
-        // 
+        // checking if our key is already existing in the map
         if(!this.map[hashKey]){
-            // 
+            // creating a new array
             this.map[hashKey] = [];
         }
         this.map[hashKey].push(value);
     }
 
     get(key){
-        let hashKey = this.hash(key); // 
-        return this.map[hashKey]; // 
+        let hashKey = this.hash(key); // gets the segment
+        return this.map[hashKey]; // returns the value of that key
     }
 }
 
